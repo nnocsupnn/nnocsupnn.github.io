@@ -1,4 +1,4 @@
-baseURL = "https://nnocsupnn.github.io/docs/"
+baseURL = "https://nnocsupnn.github.io/"
 title = "nnocsupnn"
 languageCode = "en-us"
 theme = "PaperMod"
