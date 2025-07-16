@@ -1,4 +1,4 @@
-baseURL = "https://nnocsupnn.github.io"
+baseURL = "https://nnocsupnn.github.io/"
 title = "nnocsupnn"
 languageCode = "en-us"
 theme = "PaperMod"
@@ -7,8 +7,3 @@ publishDir = "docs"
 [params]
   author = "Nino Manalo Casupanan"
   description = "My developer profile"
-
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
