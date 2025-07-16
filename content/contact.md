@@ -1,6 +1,6 @@
 +++
 date = '2025-07-16T15:26:18+08:00'
-draft = true
+draft = false
 title = '📫 Contact'
 +++
 [![Website](https://img.shields.io/badge/Website-121011?style=for-the-badge&logo=githubpages&logoColor=white)](https://nnocsupnn.github.io)
