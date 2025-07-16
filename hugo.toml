@@ -7,3 +7,8 @@ publishDir = "docs"
 [params]
   author = "Nino Manalo Casupanan"
   description = "My developer profile"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
