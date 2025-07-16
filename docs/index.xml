@@ -1,34 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>nnocsupnn</title>
-    <link>https://nnocsupnn.github.io/</link>
-    <description>Recent content on nnocsupnn</description>
-    <generator>Hugo -- 0.148.1</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 16 Jul 2025 15:26:18 +0800</lastBuildDate>
-    <atom:link href="https://nnocsupnn.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>📫 Contact</title>
-      <link>https://nnocsupnn.github.io/contact/</link>
-      <pubDate>Wed, 16 Jul 2025 15:26:18 +0800</pubDate>
-      <guid>https://nnocsupnn.github.io/contact/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://nnocsupnn.github.io&#34;&gt;&lt;img alt=&#34;Website&#34; loading=&#34;lazy&#34; src=&#34;https://img.shields.io/badge/Website-121011?style=for-the-badge&amp;logo=githubpages&amp;logoColor=white&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;https://www.linkedin.com/in/nnocsupnn/&#34;&gt;&lt;img alt=&#34;LinkedIn&#34; loading=&#34;lazy&#34; src=&#34;https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&amp;logo=linkedin&amp;logoColor=white&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;https://instagram.com/nnocsupnn&#34;&gt;&lt;img alt=&#34;Instagram&#34; loading=&#34;lazy&#34; src=&#34;https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&amp;logo=instagram&amp;logoColor=white&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;contact&#34;&gt;Contact&lt;/h3&gt;
-&lt;div style=&#34;display: flex; gap: 10px; flex-wrap: wrap; flex-direction: column&#34;&gt;
-    &lt;a href=&#34;tel:+639568534856&#34;&gt;+63 956 853 4856&lt;/a&gt;
-    &lt;a href=&#34;mailto:nnocsupnn@gmail.com&#34;&gt;nnocsupnn@gmail.com&lt;/a&gt;
-&lt;/div&gt;</description>
-    </item>
-    <item>
-      <title>Projects</title>
-      <link>https://nnocsupnn.github.io/projects/</link>
-      <pubDate>Wed, 16 Jul 2025 15:13:46 +0800</pubDate>
-      <guid>https://nnocsupnn.github.io/projects/</guid>
-      <description>&lt;h1 id=&#34;-projects&#34;&gt;🚀 Projects&lt;/h1&gt;
-&lt;p&gt;&lt;em&gt;For more, visit my &lt;a href=&#34;https://github.com/nnocsupnn&#34;&gt;GitHub profile&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>nnocsupnn</title><link>https://nnocsupnn.github.io/</link><description>Recent content on nnocsupnn</description><generator>Hugo -- 0.148.1</generator><language>en-us</language><lastBuildDate>Wed, 16 Jul 2025 15:26:18 +0800</lastBuildDate><atom:link href="https://nnocsupnn.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>📫 Contact</title><link>https://nnocsupnn.github.io/contact/</link><pubDate>Wed, 16 Jul 2025 15:26:18 +0800</pubDate><guid>https://nnocsupnn.github.io/contact/</guid><description>&lt;p>&lt;a href="https://nnocsupnn.github.io">&lt;img alt="Website" loading="lazy" src="https://img.shields.io/badge/Website-121011?style=for-the-badge&amp;logo=githubpages&amp;logoColor=white">&lt;/a>
+&lt;a href="https://www.linkedin.com/in/nnocsupnn/">&lt;img alt="LinkedIn" loading="lazy" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&amp;logo=linkedin&amp;logoColor=white">&lt;/a>
+&lt;a href="https://instagram.com/nnocsupnn">&lt;img alt="Instagram" loading="lazy" src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&amp;logo=instagram&amp;logoColor=white">&lt;/a>&lt;/p>
+&lt;h3 id="contact">Contact&lt;/h3>
+&lt;div style="display: flex; gap: 10px; flex-wrap: wrap; flex-direction: column">
+&lt;a href="tel:+639568534856">+63 956 853 4856&lt;/a>
+&lt;a href="mailto:nnocsupnn@gmail.com">nnocsupnn@gmail.com&lt;/a>
+&lt;/div></description></item><item><title>Projects</title><link>https://nnocsupnn.github.io/projects/</link><pubDate>Wed, 16 Jul 2025 15:13:46 +0800</pubDate><guid>https://nnocsupnn.github.io/projects/</guid><description>&lt;h1 id="-projects">🚀 Projects&lt;/h1>
+&lt;p>&lt;em>For more, visit my &lt;a href="https://github.com/nnocsupnn">GitHub profile&lt;/a>.&lt;/em>&lt;/p></description></item></channel></rss>
