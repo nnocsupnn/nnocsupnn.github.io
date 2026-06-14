@@ -835,17 +835,20 @@ function runCount(el){
     {name:'pyconverter',lang:'Python',desc:'Python utility that converts JSON data into structured Excel spreadsheets.',tags:['python','json','excel'],url:'https://github.com/nnocsupnn/pyconverter',live:null,stars:0},
     {name:'uploader-lib',lang:'PHP',desc:'PHP library for streaming file uploads to cloud storage — built & maintained for the Maxicare IT team.',tags:['library','cloud','php'],url:'https://github.com/nnocsupnn/uploader-lib',live:null,stars:1}
   ];
-  // ---- Other owned repositories (forks excluded) ----
+  // ---- Other owned repositories (forks excluded) · sorted by most recent push ----
   var others=[
-    {name:'aws-terraform-generator',lang:'JavaScript',desc:'Generates Terraform for AWS API Gateway REST routes — infrastructure as code, scaffolded automatically.',tags:['terraform','aws','iac'],url:'https://github.com/nnocsupnn/aws-terraform-generator',live:'https://aws-terraform-generator.vercel.app',stars:0},
-    {name:'spring-kafka-demo',lang:'Java',desc:'Event-driven microservices with Apache Kafka & Spring Boot, deployable to Kubernetes.',tags:['kafka','spring','k8s'],url:'https://github.com/nnocsupnn/spring-kafka-demo',live:null,stars:0},
-    {name:'asterion-portal',lang:'JavaScript',desc:'Web application portal with a live deployment — front-end portal build.',tags:['portal','spa','web'],url:'https://github.com/nnocsupnn/asterion-portal',live:'https://asterion-portal.vercel.app',stars:1},
-    {name:'nuxt-ecommerce-portal',lang:'Vue',desc:'Full e-commerce storefront built on Nuxt — SSR, cart & checkout flows, deployed live.',tags:['nuxt','ssr','commerce'],url:'https://github.com/nnocsupnn/nuxt-ecommerce-portal',live:'https://maxicare-ecommerce-portal.vercel.app',stars:0},
-    {name:'fa-backend-api',lang:'Python',desc:'Python backend API service — clean, typed and ready to extend.',tags:['python','api','backend'],url:'https://github.com/nnocsupnn/fa-backend-api',live:null,stars:1},
-    {name:'terraform-demo',lang:'HCL',desc:'Hands-on Terraform infrastructure demonstrations and reusable IaC patterns.',tags:['terraform','iac','devops'],url:'https://github.com/nnocsupnn/terraform-demo',live:null,stars:0},
-    {name:'sql-extractor',lang:'Python',desc:'Simple desktop SQL extractor built with Python and PySimpleGUI.',tags:['python','sql','gui'],url:'https://github.com/nnocsupnn/sql-extractor',live:null,stars:0},
-    {name:'ncov',lang:'JavaScript',desc:'Real-time COVID-19 statistics dashboard in React, powered by the NovelCOVID API.',tags:['react','api','dataviz'],url:'https://github.com/nnocsupnn/ncov',live:null,stars:0}
+    {name:'aws-terraform-generator',lang:'JavaScript',desc:'Generates Terraform for AWS API Gateway REST routes — infrastructure as code, scaffolded automatically.',tags:['terraform','aws','iac'],url:'https://github.com/nnocsupnn/aws-terraform-generator',live:'https://aws-terraform-generator.vercel.app',stars:0,pushed:'2025-10-17'},
+    {name:'asterion-portal',lang:'JavaScript',desc:'Web application portal with a live deployment — front-end portal build.',tags:['portal','spa','web'],url:'https://github.com/nnocsupnn/asterion-portal',live:'https://asterion-portal.vercel.app',stars:1,pushed:'2025-08-26'},
+    {name:'theme-shopify-trendifyshop',lang:'Liquid',desc:'Custom Shopify storefront theme implemented in Liquid.',tags:['shopify','liquid','theme'],url:'https://github.com/nnocsupnn/theme-shopify-trendifyshop',live:null,stars:0,pushed:'2025-07-21'},
+    {name:'terraform-demo',lang:'HCL',desc:'Hands-on Terraform infrastructure demonstrations and reusable IaC patterns.',tags:['terraform','iac','devops'],url:'https://github.com/nnocsupnn/terraform-demo',live:null,stars:0,pushed:'2025-04-14'},
+    {name:'nuxt-ecommerce-portal',lang:'Vue',desc:'Full e-commerce storefront built on Nuxt — SSR, cart & checkout flows, deployed live.',tags:['nuxt','ssr','commerce'],url:'https://github.com/nnocsupnn/nuxt-ecommerce-portal',live:'https://maxicare-ecommerce-portal.vercel.app',stars:0,pushed:'2025-03-25'},
+    {name:'aaliyah-shop',lang:'Vue',desc:'A clean Vue storefront side-project, deployed live on Vercel.',tags:['vue','shop','vercel'],url:'https://github.com/nnocsupnn/aaliyah-shop',live:'https://aaliyah-shop.vercel.app',stars:0,pushed:'2025-02-28'},
+    {name:'spring-kafka-demo',lang:'Java',desc:'Event-driven microservices with Apache Kafka & Spring Boot, deployable to Kubernetes.',tags:['kafka','spring','k8s'],url:'https://github.com/nnocsupnn/spring-kafka-demo',live:null,stars:0,pushed:'2025-02-06'},
+    {name:'ncov',lang:'JavaScript',desc:'Real-time COVID-19 statistics dashboard in React, powered by the NovelCOVID API.',tags:['react','api','dataviz'],url:'https://github.com/nnocsupnn/ncov',live:null,stars:0,pushed:'2024-12-17'},
+    {name:'fa-backend-api',lang:'Python',desc:'Python backend API service — clean, typed and ready to extend.',tags:['python','api','backend'],url:'https://github.com/nnocsupnn/fa-backend-api',live:null,stars:1,pushed:'2023-09-11'},
+    {name:'sql-extractor',lang:'Python',desc:'Simple desktop SQL extractor built with Python and PySimpleGUI.',tags:['python','sql','gui'],url:'https://github.com/nnocsupnn/sql-extractor',live:null,stars:0,pushed:'2023-07-17'}
   ];
+  others.sort(function(a,b){return (b.pushed||'').localeCompare(a.pushed||'');});
 
   function card(p,i,pin){
     var col=L[p.lang]||'#888';
@@ -865,7 +868,7 @@ function runCount(el){
   var grid=document.getElementById('projGrid');if(!grid)return;
   var html=head('<span class="pin">📌</span> Pinned','curated by author');
   html+=pinned.map(function(p,i){return card(p,i,true);}).join('');
-  html+=head('<span class="hash">#</span> Other repositories','owner · forks excluded');
+  html+=head('<span class="hash">#</span> Other repositories','forks excluded · newest first');
   html+=others.map(function(p,i){return card(p,i,false);}).join('');
   grid.innerHTML=html;
   if(window._rebindCur)window._rebindCur();
