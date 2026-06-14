@@ -292,6 +292,16 @@ section{position:relative;padding:118px 0 30px}
 .proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;position:relative}
 .proj-tags i{font-style:normal;font-size:10.5px;color:var(--muted);border:1px solid var(--line);padding:3px 8px;letter-spacing:.03em}
 .proj-more{text-align:center;margin-top:30px}
+.proj-group-head{grid-column:1/-1;display:flex;align-items:center;gap:14px;margin:8px 0 2px}
+.proj-group-head:not(:first-child){margin-top:26px}
+.proj-group-head .lbl{font-family:var(--display);font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--white);display:flex;align-items:center;gap:9px}
+.proj-group-head .lbl .pin{color:var(--amber)}
+.proj-group-head .lbl .hash{color:var(--mint)}
+.proj-group-head .ln{flex:1;height:1px;background:linear-gradient(90deg,var(--line-2),transparent)}
+.proj-group-head .ct{font-size:11px;color:var(--dim);letter-spacing:.1em}
+.proj.is-pin{border-color:rgba(255,180,84,0.22)}
+.proj.is-pin::after{content:"PINNED";position:absolute;top:14px;right:18px;font-size:9.5px;letter-spacing:.16em;color:var(--amber);border:1px solid rgba(255,180,84,0.3);padding:2px 6px;z-index:1}
+.proj.is-pin .proj-lang{margin-right:64px}
 
 /* ---------- Experience / Timeline ---------- */
 .xp-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px}
@@ -817,30 +827,47 @@ function runCount(el){
    ============================================================ */
 (function(){
   var L={JavaScript:'#f1e05a',TypeScript:'#3178c6',Vue:'#41b883',Java:'#b07219',Python:'#3572A5',PHP:'#4F5D95',HCL:'#844FBA',Shell:'#89e051',Liquid:'#67b8de'};
-  var projects=[
-    {name:'claude-flightdeck',lang:'TypeScript',desc:'Browser-based control panel for orchestrating & monitoring Claude Code multi-agent pipelines in real time.',tags:['agents','realtime','dx'],url:'https://github.com/nnocsupnn/claude-flightdeck',live:null,stars:0},
+  // ---- Pinned on GitHub (exact order from the profile) ----
+  var pinned=[
+    {name:'Preymwork',lang:'PHP',desc:'Lightweight PHP front-end micro-framework — Twig templating, Illuminate packages and Dotenv config baked in.',tags:['php','twig','framework'],url:'https://github.com/nnocsupnn/Preymwork',live:null,stars:0},
+    {name:'expressjs-app',lang:'JavaScript',desc:'Express.js boilerplate that cuts the setup time for spinning up new REST APIs.',tags:['express','nodejs','api'],url:'https://github.com/nnocsupnn/expressjs-app',live:null,stars:1},
+    {name:'letsfacts',lang:'Dart',desc:'First native Android app, built with Flutter — a clean intro into cross-platform mobile.',tags:['flutter','android','mobile'],url:'https://github.com/nnocsupnn/letsfacts',live:null,stars:0},
+    {name:'pyconverter',lang:'Python',desc:'Python utility that converts JSON data into structured Excel spreadsheets.',tags:['python','json','excel'],url:'https://github.com/nnocsupnn/pyconverter',live:null,stars:0},
+    {name:'uploader-lib',lang:'PHP',desc:'PHP library for streaming file uploads to cloud storage — built & maintained for the Maxicare IT team.',tags:['library','cloud','php'],url:'https://github.com/nnocsupnn/uploader-lib',live:null,stars:1}
+  ];
+  // ---- Other owned repositories (forks excluded) ----
+  var others=[
     {name:'aws-terraform-generator',lang:'JavaScript',desc:'Generates Terraform for AWS API Gateway REST routes — infrastructure as code, scaffolded automatically.',tags:['terraform','aws','iac'],url:'https://github.com/nnocsupnn/aws-terraform-generator',live:'https://aws-terraform-generator.vercel.app',stars:0},
-    {name:'slimmer-api',lang:'PHP',desc:'Production-style REST API on Slim 4 with JWT auth & Eloquent ORM — a clean PHP backend boilerplate.',tags:['slim','jwt','php'],url:'https://github.com/nnocsupnn/slimmer-api',live:null,stars:2},
     {name:'spring-kafka-demo',lang:'Java',desc:'Event-driven microservices with Apache Kafka & Spring Boot, deployable to Kubernetes.',tags:['kafka','spring','k8s'],url:'https://github.com/nnocsupnn/spring-kafka-demo',live:null,stars:0},
-    {name:'chrome-ext-pdf-converter',lang:'JavaScript',desc:'Chrome extension converting PDFs to images entirely on-device — zero uploads, full privacy.',tags:['chrome','privacy','client'],url:'https://github.com/nnocsupnn/chrome-ext-pdf-converter',live:null,stars:2},
+    {name:'asterion-portal',lang:'JavaScript',desc:'Web application portal with a live deployment — front-end portal build.',tags:['portal','spa','web'],url:'https://github.com/nnocsupnn/asterion-portal',live:'https://asterion-portal.vercel.app',stars:1},
     {name:'nuxt-ecommerce-portal',lang:'Vue',desc:'Full e-commerce storefront built on Nuxt — SSR, cart & checkout flows, deployed live.',tags:['nuxt','ssr','commerce'],url:'https://github.com/nnocsupnn/nuxt-ecommerce-portal',live:'https://maxicare-ecommerce-portal.vercel.app',stars:0},
-    {name:'uploader-lib',lang:'PHP',desc:'PHP library for streaming file uploads to cloud storage — built & maintained for the Maxicare IT team.',tags:['library','cloud','php'],url:'https://github.com/nnocsupnn/uploader-lib',live:null,stars:1},
+    {name:'fa-backend-api',lang:'Python',desc:'Python backend API service — clean, typed and ready to extend.',tags:['python','api','backend'],url:'https://github.com/nnocsupnn/fa-backend-api',live:null,stars:1},
+    {name:'terraform-demo',lang:'HCL',desc:'Hands-on Terraform infrastructure demonstrations and reusable IaC patterns.',tags:['terraform','iac','devops'],url:'https://github.com/nnocsupnn/terraform-demo',live:null,stars:0},
+    {name:'sql-extractor',lang:'Python',desc:'Simple desktop SQL extractor built with Python and PySimpleGUI.',tags:['python','sql','gui'],url:'https://github.com/nnocsupnn/sql-extractor',live:null,stars:0},
     {name:'ncov',lang:'JavaScript',desc:'Real-time COVID-19 statistics dashboard in React, powered by the NovelCOVID API.',tags:['react','api','dataviz'],url:'https://github.com/nnocsupnn/ncov',live:null,stars:0}
   ];
-  var grid=document.getElementById('projGrid');if(!grid)return;
-  grid.innerHTML=projects.map(function(p,i){
+
+  function card(p,i,pin){
     var col=L[p.lang]||'#888';
     var id=('0'+(i+1)).slice(-2);
-    var live=p.live?'<span class="live">live ↗</span>':'';
-    return '<a class="proj" href="'+p.url+'" target="_blank" rel="noopener" data-cur>'+
-      '<div class="proj-top"><span class="proj-id">PRJ_'+id+'</span>'+
+    var live=p.live?'<a class="live" href="'+p.live+'" target="_blank" rel="noopener" data-cur>live ↗</a>':'';
+    return '<a class="proj'+(pin?' is-pin':'')+'" href="'+p.url+'" target="_blank" rel="noopener" data-cur>'+
+      '<div class="proj-top"><span class="proj-id">'+(pin?'PIN_':'REPO_')+id+'</span>'+
       '<span class="proj-lang"><span class="ld" style="background:'+col+'"></span>'+p.lang+'</span></div>'+
       '<h3>'+p.name+'<span class="arr">↗</span></h3>'+
       '<p>'+p.desc+'</p>'+
       '<div class="proj-tags">'+p.tags.map(function(t){return '<i>#'+t+'</i>';}).join('')+'</div>'+
-      '<div class="proj-foot"><span class="m" data-star="'+p.name+'">★ '+p.stars+'</span><span class="m">⑂ repo</span>'+live+'</div>'+
+      '<div class="proj-foot"><span class="m" data-star="'+p.name+'">★ '+p.stars+'</span><span class="m">⑂ source</span>'+live+'</div>'+
     '</a>';
-  }).join('');
+  }
+  function head(lbl,ct){return '<div class="proj-group-head"><span class="lbl">'+lbl+'</span><span class="ln"></span><span class="ct">'+ct+'</span></div>';}
+
+  var grid=document.getElementById('projGrid');if(!grid)return;
+  var html=head('<span class="pin">📌</span> Pinned','curated by author');
+  html+=pinned.map(function(p,i){return card(p,i,true);}).join('');
+  html+=head('<span class="hash">#</span> Other repositories','owner · forks excluded');
+  html+=others.map(function(p,i){return card(p,i,false);}).join('');
+  grid.innerHTML=html;
   if(window._rebindCur)window._rebindCur();
 
   // live enrichment: GitHub stars + repo count (best-effort, silent fallback)
